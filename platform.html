@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>平台流程｜智医保</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="platform">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>智医保</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">首页</a>
+        <a href="solution.html">产品与服务</a>
+        <a href="platform.html">平台流程</a>
+        <a href="team.html">团队与规划</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="ghost-link" href="#journey">服务闭环</a>
+        <a class="primary-link" href="team.html#contact">项目联系</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">首页</a>
+      <a href="solution.html">产品与服务</a>
+      <a href="platform.html">平台流程</a>
+      <a href="team.html">团队与规划</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="sub-hero">
+      <div class="container sub-hero-grid">
+        <div>
+          <div class="eyebrow">平台流程</div>
+          <h1>把投保、初诊、审核、调理与结算串联成更顺畅的服务流程。</h1>
+          <p class="hero-lead">
+            平台围绕学生使用过程中的关键节点组织服务路径，
+            将用户入口、合作机构接诊、审核放行与后续结算衔接起来，
+            方便用户持续使用中医调理服务。
+          </p>
+        </div>
+        <aside class="aside-panel">
+          <small>流程节点</small>
+          <strong>投保 / 初诊 / 申请服务 / 审核 / 调理结算</strong>
+          <p>覆盖从投保到到店调理、再到结算完成的主要服务环节。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="journey">
+      <div class="container">
+        <div class="journey-head">
+          <div class="eyebrow">服务闭环</div>
+          <h2>一个学生从初次接触到完成调理，平台需要承接哪些节点？</h2>
+        </div>
+
+        <div class="journey-line journey-line-five">
+          <article class="journey-card active">
+            <small>STEP 01</small>
+            <h3>在线投保</h3>
+            <p>学生自主投保，或由学校统一组织投保，完成基础信息填写与健康告知。</p>
+          </article>
+          <article class="journey-card">
+            <small>STEP 02</small>
+            <h3>合作机构初诊</h3>
+            <p>由校医院或合作中医机构进行初诊，确认是否进入约定责任范围。</p>
+          </article>
+          <article class="journey-card">
+            <small>STEP 03</small>
+            <h3>申请调理津贴</h3>
+            <p>用户上传诊断证明，申请开通调理津贴权限，进入快速审核流程。</p>
+          </article>
+          <article class="journey-card">
+            <small>STEP 04</small>
+            <h3>审核与凭证生成</h3>
+            <p>平台通过AI+人工快速核赔，审核通过后生成电子调理凭证。</p>
+          </article>
+          <article class="journey-card">
+            <small>STEP 05</small>
+            <h3>调理与结算</h3>
+            <p>在合作中医馆完成服务，支持直赔结算或事后报销两条路径。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container flow-layout">
+        <div class="flow-copy">
+          <div class="eyebrow">电子调理凭证</div>
+          <h2>电子调理凭证用于连接审核结果与到店服务。</h2>
+          <p>
+            审核通过后，用户可获得对应凭证，
+            用于合作中医馆识别服务权限、完成调理记录与后续结算。
+          </p>
+
+          <div class="flow-points">
+            <div>
+              <strong>适用责任</strong>
+              <span>特定慢性病中医调理津贴</span>
+            </div>
+            <div>
+              <strong>适用渠道</strong>
+              <span>合作中医馆 / 校医院转诊机构</span>
+            </div>
+            <div>
+              <strong>服务方式</strong>
+              <span>直赔结算 / 事后报销</span>
+            </div>
+            <div>
+              <strong>审核方式</strong>
+              <span>AI+人工快速核赔，确认无除外责任后生成凭证</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="voucher-stage">
+          <div class="voucher-card">
+            <div class="voucher-top">
+              <small>电子调理凭证</small>
+              <span id="voucherStatus">待激活</span>
+            </div>
+
+            <div class="voucher-body">
+              <div class="voucher-code" id="voucherCode">ZYB-2026-DEMO</div>
+              <p>用于合作中医馆调理服务识别、权限验证与结算对接。</p>
+            </div>
+
+            <div class="voucher-meta">
+              <div>
+                <strong>创建方式</strong>
+                <span>系统审核通过后自动生成</span>
+              </div>
+              <div>
+                <strong>使用场景</strong>
+                <span>到店调理 / 事后报销</span>
+              </div>
+            </div>
+
+            <button class="button button-dark full" id="voucherButton" type="button">模拟激活凭证</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <div class="split-head dark">
+          <div>
+            <div class="eyebrow">保—医—校协同</div>
+            <h2>把学生、校医院、合作中医馆与保险服务连接在同一条路径中。</h2>
+          </div>
+          <p>
+            用户端看到的是测评、投保和服务页面，平台端负责把机构接诊、审核授权、
+            电子凭证、履约记录与结算逻辑组织成相对连贯的服务流程。
+          </p>
+        </div>
+
+        <div class="network-grid">
+          <article class="network-card">
+            <small>用户侧</small>
+            <h3>大学生</h3>
+            <p>需要健康测评、调理建议、保障支持与更省事的结算路径。</p>
+          </article>
+          <article class="network-card">
+            <small>医疗侧</small>
+            <h3>校医院 / 合作中医馆</h3>
+            <p>承担初诊、服务提供、调理记录上传与合作服务履约。</p>
+          </article>
+          <article class="network-card">
+            <small>平台侧</small>
+            <h3>智医保平台</h3>
+            <p>负责用户入口、审核逻辑、津贴权限、凭证管理与结果沉淀。</p>
+          </article>
+          <article class="network-card">
+            <small>保障侧</small>
+            <h3>保险合作方</h3>
+            <p>承接保障责任、产品定价、赔付控制与风险管理逻辑。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container side-notes">
+        <div class="note-card">
+          <small>事后报销</small>
+          <h3>上传病历和发票，总金额证明即可申请</h3>
+          <p>用户可在非直赔场景中提交病历与发票材料，按定额给付规则进行后续报销处理。</p>
+        </div>
+        <div class="note-card">
+          <small>特色服务</small>
+          <h3>药膳 / 香包 / 健康知识推送</h3>
+          <p>平台可承接药膳处方上传、香包服务入口与每日中医健康知识推送等延展场景。</p>
+        </div>
+        <div class="note-card">
+          <small>合作拓展</small>
+          <h3>校医院、合作中医馆与平台形成稳定协同</h3>
+          <p>后续可围绕机构接入、预约管理、履约记录与结算效率持续完善平台能力。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-end">
+      <div class="container end-panel">
+        <div>
+          <div class="eyebrow">最后一页</div>
+          <h2>进一步查看团队分工、发展规划、财务预测与联系信息。</h2>
+        </div>
+        <a class="button button-dark" href="team.html">进入团队页</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>智医保</strong>
+        <p>大学生中医健康管理与保险服务平台项目官网</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="solution.html">产品与服务</a>
+        <a href="team.html">团队与规划</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

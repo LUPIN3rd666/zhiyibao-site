@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>产品与服务｜智医保</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body data-page="solution">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark"></span>
+        <span>智医保</span>
+      </a>
+
+      <nav class="desktop-nav">
+        <a href="index.html">首页</a>
+        <a href="solution.html">产品与服务</a>
+        <a href="platform.html">平台流程</a>
+        <a href="team.html">团队与规划</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="ghost-link" href="#prototype">功能原型</a>
+        <a class="primary-link" href="team.html#contact">项目联系</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">☰</button>
+      </div>
+    </div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="index.html">首页</a>
+      <a href="solution.html">产品与服务</a>
+      <a href="platform.html">平台流程</a>
+      <a href="team.html">团队与规划</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="sub-hero">
+      <div class="container sub-hero-grid">
+        <div>
+          <div class="eyebrow">产品与服务</div>
+          <h1>把健康测评、风险结果、方案推荐与投保入口放到同一条使用路径中。</h1>
+          <p class="hero-lead">
+            用户可以先完成基础测评，再查看风险结果、个性化建议和保障方案，
+            并根据结果进入投保流程。页面围绕用户的实际使用顺序组织内容。
+          </p>
+        </div>
+
+        <aside class="aside-panel">
+          <small>主要入口</small>
+          <strong>健康测评 / 风险结果 / 保险方案 / 在线投保</strong>
+          <p>覆盖体质辨识、风险识别、保险推荐、投保申请等前台核心功能。</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-kicker">核心功能模块</div>
+        <div class="service-grid">
+          <article class="service-card">
+            <small>01</small>
+            <h3>健康测评</h3>
+            <p>采集基础信息、生活习惯、症状表现与9种体质倾向，形成初始健康画像。</p>
+          </article>
+          <article class="service-card">
+            <small>02</small>
+            <h3>风险识别</h3>
+            <p>围绕脱发、失眠、脾胃问题等重点场景给出风险结果与阶段性提示。</p>
+          </article>
+          <article class="service-card">
+            <small>03</small>
+            <h3>产品推荐</h3>
+            <p>根据测评结果联动基础险与运动附加险，显示对应保障内容与参考保费。</p>
+          </article>
+          <article class="service-card">
+            <small>04</small>
+            <h3>在线投保</h3>
+            <p>将测评结果自动带入投保表单，支持学生自主投保或学校统一投保。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="prototype">
+      <div class="container prototype-wrap">
+        <div class="prototype-sidebar">
+          <div class="eyebrow">功能体验</div>
+          <h2>在一个界面中完成测评、查看结果并选择保障方案。</h2>
+          <p>
+            页面围绕基础测评、风险结果和在线投保三个步骤展开，
+            用户可以按照顺序完成信息填写、结果查看与方案选择。
+          </p>
+
+          <div class="prototype-notes">
+            <div>
+              <strong>测评入口</strong>
+              <span>基础信息、症状、9种体质与舌象上传入口</span>
+            </div>
+            <div>
+              <strong>结果联动</strong>
+              <span>风险结果、建议与保障方案同步呈现</span>
+            </div>
+            <div>
+              <strong>投保入口</strong>
+              <span>测评结果可自动同步至投保表单</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="prototype-stage">
+          <div class="prototype-shell">
+            <div class="prototype-header">
+              <span></span><span></span><span></span>
+            </div>
+
+            <div class="prototype-tabs">
+              <button class="tab-button active" data-tab="assessment">健康测评</button>
+              <button class="tab-button" data-tab="result">风险结果</button>
+              <button class="tab-button" data-tab="apply">在线投保</button>
+            </div>
+
+            <div class="prototype-body">
+              <section class="tab-panel active" id="assessmentTab">
+                <div class="panel-title">
+                  <h3>基础测评表单</h3>
+                  <p>用于演示用户端的信息采集、结果生成与投保联动逻辑。</p>
+                </div>
+
+                <form id="assessmentForm" class="clean-form">
+                  <div class="form-row">
+                    <div class="field">
+                      <label for="userName">姓名</label>
+                      <input id="userName" type="text" placeholder="请输入姓名" />
+                    </div>
+                    <div class="field">
+                      <label for="userSchool">学校</label>
+                      <input id="userSchool" type="text" placeholder="请输入学校" />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="field">
+                      <label for="sleepLevel">睡眠状态</label>
+                      <select id="sleepLevel">
+                        <option value="0">较好</option>
+                        <option value="1">一般</option>
+                        <option value="2">较差</option>
+                        <option value="3">很差</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="stressLevel">压力水平</label>
+                      <select id="stressLevel">
+                        <option value="0">较低</option>
+                        <option value="1">中等</option>
+                        <option value="2">较高</option>
+                        <option value="3">很高</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="field">
+                      <label for="dietLevel">饮食规律</label>
+                      <select id="dietLevel">
+                        <option value="0">较规律</option>
+                        <option value="1">偶尔不规律</option>
+                        <option value="2">经常不规律</option>
+                        <option value="3">长期不规律</option>
+                      </select>
+                    </div>
+                    <div class="field">
+                      <label for="exerciseLevel">运动频率</label>
+                      <select id="exerciseLevel">
+                        <option value="0">几乎不运动</option>
+                        <option value="1">1-2次/周</option>
+                        <option value="2">3-4次/周</option>
+                        <option value="3">5次及以上</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label>当前困扰</label>
+                    <div class="chip-group">
+                      <label class="chip"><input type="checkbox" value="hair" name="issue" />脱发</label>
+                      <label class="chip"><input type="checkbox" value="sleep" name="issue" />失眠</label>
+                      <label class="chip"><input type="checkbox" value="stomach" name="issue" />脾胃不适</label>
+                      <label class="chip"><input type="checkbox" value="throat" name="issue" />慢性咽部不适</label>
+                      <label class="chip"><input type="checkbox" value="acne" name="issue" />痤疮</label>
+                      <label class="chip"><input type="checkbox" value="pain" name="issue" />痛经/经期不适</label>
+                      <label class="chip"><input type="checkbox" value="sports" name="issue" />运动恢复</label>
+                      <label class="chip"><input type="checkbox" value="fatigue" name="issue" />疲劳乏力</label>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label>体质倾向</label>
+                    <div class="chip-group compact">
+                      <label class="chip"><input type="radio" name="constitution" value="balanced" checked />平和质</label>
+                      <label class="chip"><input type="radio" name="constitution" value="qi_deficiency" />气虚质</label>
+                      <label class="chip"><input type="radio" name="constitution" value="yang_deficiency" />阳虚质</label>
+                      <label class="chip"><input type="radio" name="constitution" value="yin_deficiency" />阴虚质</label>
+                      <label class="chip"><input type="radio" name="constitution" value="phlegm_damp" />痰湿质</label>
+                      <label class="chip"><input type="radio" name="constitution" value="damp_heat" />湿热质</label>
+                      <label class="chip"><input type="radio" name="constitution" value="blood_stasis" />血瘀质</label>
+                      <label class="chip"><input type="radio" name="constitution" value="qi_stagnation" />气郁质</label>
+                      <label class="chip"><input type="radio" name="constitution" value="special" />特禀质</label>
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="tongueFile">舌象上传入口</label>
+                    <input id="tongueFile" type="file" accept="image/*" />
+                    <small class="field-tip">支持图片上传与预览。</small>
+                    <img id="tonguePreview" class="tongue-preview hidden" alt="舌象预览" />
+                  </div>
+
+                  <button class="button button-dark full" type="submit">生成测评结果</button>
+                </form>
+              </section>
+
+              <section class="tab-panel" id="resultTab">
+                <div class="panel-title">
+                  <h3>风险结果概览</h3>
+                  <p>集中展示体质识别、风险等级、建议保费与推荐方案。</p>
+                </div>
+
+                <div class="result-summary">
+                  <div class="summary-box">
+                    <small>体质识别</small>
+                    <strong id="constitutionName">待生成</strong>
+                    <p id="constitutionDescription">完成测评后显示。</p>
+                  </div>
+                  <div class="summary-box">
+                    <small>综合等级</small>
+                    <strong id="riskLevel">待生成</strong>
+                    <p id="riskDescription">完成测评后显示。</p>
+                  </div>
+                  <div class="summary-box">
+                    <small>建议保费</small>
+                    <strong id="premiumResult">待生成</strong>
+                    <p id="premiumDescription">完成测评后显示。</p>
+                  </div>
+                </div>
+
+                <div class="bar-group">
+                  <div class="bar-row">
+                    <div class="bar-label">
+                      <span>脱发风险</span>
+                      <small id="hairValue">0%</small>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" id="hairBar"></div></div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label">
+                      <span>失眠风险</span>
+                      <small id="sleepValue">0%</small>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" id="sleepBar"></div></div>
+                  </div>
+                  <div class="bar-row">
+                    <div class="bar-label">
+                      <span>脾胃风险</span>
+                      <small id="stomachValue">0%</small>
+                    </div>
+                    <div class="bar-track"><div class="bar-fill" id="stomachBar"></div></div>
+                  </div>
+                </div>
+
+                <div class="advice-block">
+                  <div>
+                    <small>个性化建议</small>
+                    <ul id="adviceList"></ul>
+                  </div>
+                  <div class="recommend-card">
+                    <small>推荐方案</small>
+                    <div id="recommendationBox">
+                      <strong>等待测评结果</strong>
+                      <p>完成左侧测评后自动生成推荐方案。</p>
+                    </div>
+                    <button class="button button-light full" id="syncApplyBtn" type="button">同步至投保页</button>
+                  </div>
+                </div>
+              </section>
+
+              <section class="tab-panel" id="applyTab">
+                <div class="panel-title">
+                  <h3>在线投保</h3>
+                  <p>支持根据测评结果自动带入推荐方案，减少重复填写。</p>
+                </div>
+
+                <form id="applyForm" class="clean-form">
+                  <div class="form-row">
+                    <div class="field">
+                      <label for="applyName">投保人姓名</label>
+                      <input id="applyName" type="text" placeholder="请输入姓名" />
+                    </div>
+                    <div class="field">
+                      <label for="applyPhone">手机号</label>
+                      <input id="applyPhone" type="text" placeholder="请输入手机号" />
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="field">
+                      <label for="applySchool">学校</label>
+                      <input id="applySchool" type="text" placeholder="请输入学校" />
+                    </div>
+                    <div class="field">
+                      <label for="applyMode">投保方式</label>
+                      <select id="applyMode">
+                        <option value="self">学生自主投保</option>
+                        <option value="school">学校统一投保</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="field">
+                      <label for="applyPlan">方案</label>
+                      <input id="applyPlan" type="text" placeholder="测评后自动同步" />
+                    </div>
+                    <div class="field">
+                      <label for="applyPremium">拟投保保费</label>
+                      <input id="applyPremium" type="text" placeholder="测评后自动同步" />
+                    </div>
+                  </div>
+
+                  <div class="field stacked-checks">
+                    <label><input type="checkbox" id="agreeA" /> 我已阅读产品责任与免责说明</label>
+                    <label><input type="checkbox" id="agreeB" /> 我确认填写信息真实有效</label>
+                    <label><input type="checkbox" id="agreeC" /> 我同意用于健康评估与产品推荐</label>
+                  </div>
+
+                  <button class="button button-dark full" type="submit">提交投保申请</button>
+                  <p class="submit-message" id="applyMessage"></p>
+                </form>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container callout-grid">
+        <div class="callout-card">
+          <small>基础险</small>
+          <h3>特定慢性病中医调理津贴</h3>
+          <p>保障病种包括脂溢性脱发、慢性咽炎、痤疮、痛经、脾胃虚弱、失眠。</p>
+          <ul class="detail-list">
+            <li>50元/天，单次最高7天</li>
+            <li>年度累计最高60天，年度最高3000元</li>
+            <li>0免赔，30天等待期，续保无等待期</li>
+            <li>保费参考：180—260元/年</li>
+          </ul>
+        </div>
+        <div class="callout-card">
+          <small>附加险</small>
+          <h3>运动损伤中医调理服务</h3>
+          <p>面向有健身和运动习惯的学生，覆盖运动恢复相关的中医调理场景。</p>
+          <ul class="detail-list">
+            <li>运动损伤调理津贴：30元/次</li>
+            <li>年度最高20次，年度最高600元</li>
+            <li>运动药膳包：5份/年</li>
+            <li>附加保费参考：80—120元/年</li>
+          </ul>
+        </div>
+        <div class="callout-card">
+          <small>服务权益</small>
+          <h3>续保奖励机制</h3>
+          <p>通过药膳限额和针灸/把脉次数递增，增强持续使用动力。</p>
+          <ul class="detail-list">
+            <li>第1年：药膳200元，把脉/针灸5次</li>
+            <li>第2年：药膳250元，把脉/针灸8次</li>
+            <li>第3年：药膳300元，把脉/针灸11次</li>
+            <li>第5年及以上：药膳最高800元，次数最高15次</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-end">
+      <div class="container end-panel">
+        <div>
+          <div class="eyebrow">下一页</div>
+          <h2>继续查看平台流程，把保—医—校闭环和调理凭证讲清楚。</h2>
+        </div>
+        <a class="button button-dark" href="platform.html">进入平台流程页</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong>智医保</strong>
+        <p>大学生中医健康管理与保险服务平台项目官网</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">首页</a>
+        <a href="platform.html">平台流程</a>
+        <a href="team.html">团队与规划</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
