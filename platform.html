@@ -190,25 +190,67 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container side-notes">
-        <div class="note-card">
-          <small>事后报销</small>
-          <h3>上传病历和发票，总金额证明即可申请</h3>
-          <p>用户可在非直赔场景中提交病历与发票材料，按定额给付规则进行后续报销处理。</p>
-        </div>
-        <div class="note-card">
-          <small>特色服务</small>
-          <h3>药膳 / 香包 / 健康知识推送</h3>
-          <p>平台可承接药膳处方上传、香包服务入口与每日中医健康知识推送等延展场景。</p>
-        </div>
-        <div class="note-card">
-          <small>合作拓展</small>
-          <h3>校医院、合作中医馆与平台形成稳定协同</h3>
-          <p>后续可围绕机构接入、预约管理、履约记录与结算效率持续完善平台能力。</p>
-        </div>
-      </div>
-    </section>
+   ```html
+<style>
+  .side-notes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 20px;
+  }
+  .note-card {
+    transition: all 0.3s ease;
+    border: 1px solid var(--soft-line);
+    background: var(--paper);
+    padding: 20px !important;
+    display: flex;
+    flex-direction: column;
+    border-radius: 24px;
+  }
+  .note-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    border-color: var(--green);
+  }
+  .note-card img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    filter: saturate(0.8);
+    transition: filter 0.3s ease;
+  }
+  .note-card:hover img {
+    filter: saturate(1.1);
+  }
+  @media (max-width: 900px) {
+    .side-notes { grid-template-columns: 1fr; }
+  }
+</style>
+
+<section class="section">
+  <div class="container side-notes">
+    <article class="note-card">
+      <img src="https://images.unsplash.com/photo-1512036667332-288d64e637ee?auto=format&fit=crop&q=80&w=600" alt="特色香包调理" style="border-radius: 16px; margin-bottom: 16px;">
+      <small>特色服务</small>
+      <h3 style="margin: 12px 0 8px 0; font-size: 1.2rem;">特色香包调理</h3>
+      <p style="font-size: 14px; color: var(--muted); margin: 0; line-height: 1.4;">一人一方，AI精准配伍。</p>
+    </article>
+
+    <article class="note-card">
+      <img src="https://images.unsplash.com/photo-1563213126-a4273aed2016?auto=format&fit=crop&q=80&w=600" alt="中医线下义诊" style="border-radius: 16px; margin-bottom: 16px;">
+      <small>增值权益</small>
+      <h3 style="margin: 12px 0 8px 0; font-size: 1.2rem;">中医线下义诊</h3>
+      <p style="font-size: 14px; color: var(--muted); margin: 0; line-height: 1.4;">校园定期义诊，专家面对面。</p>
+    </article>
+
+    <article class="note-card">
+      <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&q=80&w=600" alt="事后极速报销" style="border-radius: 16px; margin-bottom: 16px;">
+      <small>理赔服务</small>
+      <h3 style="margin: 12px 0 8px 0; font-size: 1.2rem;">事后极速报销</h3>
+      <p style="font-size: 14px; color: var(--muted); margin: 0; line-height: 1.4;">拍照上传，最快24小时到账。</p>
+    </article>
+  </div>
+</section>
 
     <section class="section section-end">
       <div class="container end-panel">

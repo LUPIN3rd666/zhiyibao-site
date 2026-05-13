@@ -26,6 +26,7 @@ const panels = {
   assessment: document.getElementById("assessmentTab"),
   result: document.getElementById("resultTab"),
   apply: document.getElementById("applyTab"),
+  sachet: document.getElementById("sachetTab"), // 新增这一行
 };
 
 tabButtons.forEach((button) => {
@@ -327,5 +328,60 @@ if (voucherButton && voucherStatus && voucherCode) {
     voucherCode.textContent = `ZYB-2026-${code}`;
     voucherStatus.textContent = "已激活";
     voucherStatus.style.color = "#29453a";
+  });
+}
+// ==========================================
+// 香包定制模块交互逻辑
+// ==========================================
+const aiAnalyzeBtn = document.getElementById("aiAnalyzeBtn");
+const aiResultUI = document.getElementById("aiResultUI");
+const sachetForm = document.getElementById("sachetForm");
+const sachetMessage = document.getElementById("sachetMessage");
+
+if (aiAnalyzeBtn && aiResultUI) {
+  aiAnalyzeBtn.addEventListener("click", () => {
+    const fileInput = document.getElementById("sachetFile");
+    
+    // 简单校验是否上传了文件
+    if (!fileInput.files.length) {
+      alert("请先上传医疗凭证或测评结果文件。");
+      return;
+    }
+
+    // 触发 AI 分析状态
+    const originalText = aiAnalyzeBtn.textContent;
+    aiAnalyzeBtn.textContent = "AI 智能分析中...";
+    aiAnalyzeBtn.style.opacity = "0.7";
+    aiAnalyzeBtn.disabled = true;
+    aiResultUI.classList.add("hidden");
+    
+    if (sachetMessage) sachetMessage.textContent = "";
+
+    // 模拟 1 秒延迟的 AI 分析过程
+    setTimeout(() => {
+      aiAnalyzeBtn.textContent = originalText;
+      aiAnalyzeBtn.style.opacity = "1";
+      aiAnalyzeBtn.disabled = false;
+      
+      // 显示配方结果和配送输入框
+      aiResultUI.classList.remove("hidden");
+    }, 1000);
+  });
+}
+
+if (sachetForm) {
+  sachetForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const address = document.getElementById("deliveryAddress").value.trim();
+
+    if (!address) {
+      sachetMessage.textContent = "请填写配送地址。";
+      sachetMessage.style.color = "#9b3d2a";
+      return;
+    }
+
+    // 成功提示
+    sachetMessage.textContent = "香包定制服务已确认！我们将尽快为您调配并配送。";
+    sachetMessage.style.color = "#29453a";
   });
 }

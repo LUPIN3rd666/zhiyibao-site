@@ -161,6 +161,42 @@
         </div>
       </div>
     </section>
+    <style>
+      .renewal-banner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 48px 60px;
+        background: var(--card); 
+        border: 1px solid var(--green); 
+        border-radius: var(--radius);
+        backdrop-filter: blur(12px);
+        box-shadow: var(--shadow);
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+      .renewal-title { margin-bottom: 12px; font-size: 32px; color: var(--ink); }
+      .renewal-desc { font-size: 16px; color: var(--muted); max-width: 500px; margin: 0; }
+      .renewal-btn { padding: 0 32px; height: 56px; font-weight: 600; white-space: nowrap; }
+      @media (max-width: 850px) {
+        .renewal-banner { flex-direction: column; text-align: center; padding: 40px 24px; }
+        .renewal-desc { margin: 0 auto 24px; }
+        .renewal-btn { width: 100%; }
+      }
+    </style>
+
+    <section class="section" style="padding: 40px 0;">
+      <div class="container">
+        <div class="renewal-banner">
+          <div>
+            <div class="eyebrow" style="color: var(--green); margin-bottom: 8px;">Sustainability</div>
+            <h2 class="renewal-title">一键续保，权益升级</h2>
+            <p class="renewal-desc">老用户专属通道：1分钟操作，立享本年度药膳额度提升及额外针灸次数。</p>
+          </div>
+          <button class="button button-dark renewal-btn">立即验证老用户身份</button>
+        </div>
+      </div>
+    </section>
 
     <section class="section">
       <div class="container editorial-grid">

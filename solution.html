@@ -120,6 +120,7 @@
               <button class="tab-button active" data-tab="assessment">健康测评</button>
               <button class="tab-button" data-tab="result">风险结果</button>
               <button class="tab-button" data-tab="apply">在线投保</button>
+              <button class="tab-button" data-tab="sachet">香包定制</button>
             </div>
 
             <div class="prototype-body">
@@ -338,6 +339,37 @@
 
                   <button class="button button-dark full" type="submit">提交投保申请</button>
                   <p class="submit-message" id="applyMessage"></p>
+                </form>
+              </section>
+              <section class="tab-panel" id="sachetTab">
+                <div class="panel-title">
+                  <h3>特色香包定制</h3>
+                  <p>上传医疗凭证或测评结果，AI将智能分析体质并生成专属香包配方。</p>
+                </div>
+
+                <form id="sachetForm" class="clean-form">
+                  <div class="field">
+                    <label for="sachetFile">第一步：上传医疗凭证或测评结果</label>
+                    <input id="sachetFile" type="file" accept="image/*, .pdf" />
+                  </div>
+
+                  <button class="button button-dark full" type="button" id="aiAnalyzeBtn">第二步：AI 智能分析体质与配料</button>
+
+                  <div id="aiResultUI" class="hidden" style="margin-top: 24px; padding: 18px; background: #fbf8f2; border: 1px solid var(--soft-line); border-radius: 20px;">
+                    <small style="color: var(--muted); display: block; margin-bottom: 8px;">第三步：AI 配方结果</small>
+                    <strong style="display: block; font-size: 18px; margin-bottom: 8px; color: var(--green);">检测到气虚质倾向</strong>
+                    <p style="margin-bottom: 16px; color: var(--muted);">推荐配方：黄芪 + 防风 + 白术（益气固表，提升免疫力）</p>
+                    
+                    <img src="xiangbao.png" alt="香包配方示意图" style="width: 100%; border-radius: 16px; margin-bottom: 24px; border: 1px solid var(--soft-line); object-fit: cover; max-height: 350px;" />
+
+                    <div class="field">
+                      <label for="deliveryAddress">第四步：配送地址</label>
+                      <input id="deliveryAddress" type="text" placeholder="请输入您的收货地址" />
+                    </div>
+                    
+                    <button class="button button-dark full" type="submit">确认配送</button>
+                    <p class="submit-message" id="sachetMessage" style="margin-top: 12px;"></p>
+                  </div>
                 </form>
               </section>
             </div>

@@ -5,33 +5,45 @@
 }
 
 :root {
-  --bg: #f6f3ec;
-  --paper: #fffdf8;
+  --bg: transparent; /* 去掉原有的纯色背景，给图片让路 */
+  --paper: rgba(255, 253, 248, 0.65); /* 变成半透明，透出底部图片 */
   --ink: #171717;
   --muted: #666157;
   --line: rgba(23, 23, 23, 0.1);
   --soft-line: rgba(23, 23, 23, 0.06);
   --green: #29453a;
   --green-2: #335a4b;
-  --sand: #ebe5d8;
-  --card: #f9f6ef;
+  --sand: rgba(235, 229, 216, 0.7);
+  --card: rgba(249, 246, 239, 0.65); /* 半透明的卡片背景 */
   --dark: #171717;
-  --dark-panel: #1f1f1a;
+  --dark-panel: rgba(31, 31, 26, 0.85); /* 深色区块也变成半透明 */
   --dark-soft: rgba(255,255,255,0.08);
   --radius: 24px;
   --shadow: 0 20px 50px rgba(17, 17, 17, 0.08);
+}
+
+body {
+  font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: var(--ink);
+  line-height: 1.65;
+  
+  /* 全屏延伸背景魔法就在这四行 */
+  background-image: linear-gradient(rgba(246, 243, 236, 0.85), rgba(246, 243, 236, 0.85)), url('hero-bg.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+/* 一键给所有卡片加上高级的毛玻璃质感，配合全屏背景使用 */
+.service-card, .callout-card, .network-card, .note-card, .finance-card, .member-card, .mosaic-card, .aside-panel, .screen-card, .voucher-card, .end-panel, .sub-hero, .section-soft, .section-dark {
+    backdrop-filter: blur(12px);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-body {
-  font-family: "Helvetica Neue", "PingFang SC", "Microsoft YaHei", sans-serif;
-  color: var(--ink);
-  background: var(--bg);
-  line-height: 1.65;
-}
+
 
 a {
   color: inherit;
@@ -1185,3 +1197,29 @@ p {
     grid-template-columns: 1fr;
   }
 }
+/* 首页首屏背景图设置 */
+.hero-home {
+  /* 使用你原本的米黄色做一个 80% 透明度的遮罩，盖在图片上，这样不管图片多花，你的文字都绝对清晰 */
+  background-image: linear-gradient(rgba(246, 243, 236, 0.8), rgba(246, 243, 236, 0.8)), url('hero-bg.jpg');
+  background-size: cover; /* 让图片等比例缩放铺满整个区域 */
+  background-position: center; /* 图片居中显示 */
+  background-repeat: no-repeat; /* 图片不重复 */
+}
+/* 给所有分页的顶部横幅设置统一背景 */
+/* 加强版：强制所有分页顶部横幅显示背景 */
+/* 加强版：强制所有分页顶部横幅显示背景 */
+.sub-hero {
+  /* 破案关键：这里已经改成了 url('hero-bg.jpg') */
+  background-image: linear-gradient(rgba(246, 243, 236, 0.85), rgba(246, 243, 236, 0.85)), url('hero-bg.jpg') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  /* 增加一个最小高度，确保即使没内容也能看到背景 */
+  min-height: 300px; 
+  display: flex;
+  align-items: center;
+}
+/* ==========================================
+   新增专属图片适配代码 (救急版)
+   ========================================== */
+
